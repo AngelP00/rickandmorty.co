@@ -1,0 +1,28 @@
+{
+  "name": "cientificos-spa",
+  "version": "1.0.0",
+  "description": "spa usando la api de R&M",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
+  },
+  "keywords": [
+    "js",
+    "-",
+    "nodejs",
+    "-",
+    "webpack"
+  ],
+  "author": "erneledesma",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "babel-loader": "^9.1.3",
+    "copy-webpack-plugin": "^11.0.0",
+    "html-webpack-plugin": "^5.5.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
