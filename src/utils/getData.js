@@ -72,7 +72,10 @@ const getData = async (hash) => { // Agregamos el parámetro "page" con un valor
                 data = juntarData(data,hash);
                 console.log('data juntada 1', data);
             }
+            console.error('getCharacters(hash).length',getCharacters(hash).length);
+            console.error('data.info.count',data.info.count);
             data.info.count+= getCharacters(hash).length;
+            console.error('data.info.count',data.info.count);
         }
         console.log('data juntada 2', data);
         return data;
@@ -137,7 +140,7 @@ function juntarData(dataAPI,hash){ // Agregamos el parámetro "page" con un valo
     if(characters_que_coinciden.length >0){
       // Concatenar las dos listas de personajes
       data.results = data.results.concat(characters_que_coinciden);
-      data.info.count+= characters_que_coinciden.length;
+      //data.info.count+= characters_que_coinciden.length;
 
       // Ordenar la lista resultante por nombre
       data.results.sort((a, b) => a.name.localeCompare(b.name));
