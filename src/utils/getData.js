@@ -230,7 +230,7 @@ getCharacters(url);
 const characters_ext=[
     {
       "id": 1000,
-      "name": "Angel Palacioss",
+      "name": "Angel Palacios",
       "status": "Alive",
       "species": "Human",
       "type": "",
