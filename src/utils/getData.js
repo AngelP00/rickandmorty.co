@@ -68,12 +68,11 @@ const getData = async (hash) => { // Agregamos el parámetro "page" con un valor
         //console.log('data.info.count:', data.info.count);
         //console.log('data.info.pages:', data.info.pages);
         if(hash.includes('/character/?')){
-            const dataFake = await juntarData(data,hash);
             if(hash.includes(data.info.pages)){
-                data = dataFake;
+                data = juntarData(data,hash);
                 console.log('data juntada 1', data);
             }
-            data.info.count = dataFake.info.count;
+            data.info.count+= getCharacters(hash).length;
         }
         console.log('data juntada 2', data);
         return data;
@@ -117,7 +116,7 @@ const getData = async (hash) => { // Agregamos el parámetro "page" con un valor
 export default getData;
 
 
-const juntarData = async (dataAPI,hash) => { // Agregamos el parámetro "page" con un valor predeterminado de 1
+function juntarData(dataAPI,hash){ // Agregamos el parámetro "page" con un valor predeterminado de 1
     console.log('hash:', hash);
     /*
     let data=
@@ -131,7 +130,7 @@ const juntarData = async (dataAPI,hash) => { // Agregamos el parámetro "page" c
         "results": [],
     };
     */
-    let data = dataAPI
+    let data = dataAPI;
     console.log('data:', data);
     const characters_que_coinciden = getCharacters(hash);
     console.error(characters_que_coinciden.length);
@@ -162,21 +161,6 @@ const juntarData = async (dataAPI,hash) => { // Agregamos el parámetro "page" c
     //data= getCharacters(hash);
     console.log('data juntada 0', data);
     return data;
-    try {
-        data = await getData(hash); // Pasamos el número de página como segundo argumento
-        /*
-        const response = await fetch(apiURL);
-        if (!response.ok) {
-            const data = await response.json();
-            throw data.error;
-        }
-        const data = await response.json();
-        */
-        return data;
-    } catch (error) {
-        //console.error('error:', error);
-        throw error; // Propaga el error para que se maneje en el llamador
-    }
 };
 
 
