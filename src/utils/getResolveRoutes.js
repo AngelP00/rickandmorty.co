@@ -39,7 +39,7 @@ const resolveRoutes = (route) => {
         console.log('/filtercharacters/:parametros')
         return '/filtercharacters/:parametros';
     }
-    else if(route.includes('/character/')){
+    else if(route.includes('/character/') & route != '/character/'){
         return '/character/:id';
     }
     else{
