@@ -14,7 +14,7 @@
     "-",
     "webpack"
   ],
-  "author": "erneledesma",
+  "author": "angelpalacios",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.22.11",
