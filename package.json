@@ -1,7 +1,7 @@
 {
-  "name": "cientificos-spa",
+  "name": "cientificos-spa-vanilla",
   "version": "1.0.0",
-  "description": "spa usando la api de R&M",
+  "description": "spa vanilla usando la api de R&M",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
